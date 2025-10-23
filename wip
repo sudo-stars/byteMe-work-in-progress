@@ -1,0 +1,19 @@
+#include <unistd.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <dirent.h>
+
+int main()
+{
+    while(1){
+        initscr();
+        cbreak();
+        noecho();
+        curs_set(FALSE);
+
+        tput cup $((RANDOM%LINES)) $((RANDOM%COLUMNS))
+        printf "*"
+    }
+}
